@@ -1,0 +1,14 @@
+---
+# nagios_config.yml file for ansible_nagios_graylog2_nsca/tasks
+
+- block: 
+
+  - name: create nagios config for graylog2_nsca_stream
+    template:
+      dest: "{{ nagios_config_cfg_dir }}/graylog2_streams.cfg"
+      src: "nagios_graylog2_streams.cfg.j2"
+      mode: u=rwx,g=rx,o=rx
+    become: true
+    notify: Reload Nagios
+
+  when: ansible_nagios_graylog_setup_nagios_service or ansible_nagios_graylog_setup_nagios_host

@@ -1,0 +1,38 @@
+
+{% for stream in ansible_nagios_graylog_nagios_streams %}
+define service {
+        service_description            {{ stream.name }}
+        host                           {{ ansible_nagios_graylog_hostname | upper }}
+        use                            generic-service
+        passive_checks_enabled         1
+        max_check_attempts             1
+        # enable active checks only to reset the alarm
+        active_checks_enabled          1
+        check_command                  check_tcp!22
+        normal_check_interval          10
+        notification_interval          10
+        # set the contact group
+        contact_groups                 {{ stream.contact_group }}
+        flap_detection_enabled         0
+}
+
+define contactgroup{
+        contactgroup_name       {{ stream.contact_group | default(stream.name) }}
+        alias                   {{ stream.contact_group | default(stream.name) }}
+        members                 {{ stream.members | default('nagiosadmin') }}
+}
+{% endfor %}
+
+{% if ansible_nagios_graylog_setup_nagios_host %}
+# Setup graylog host:
+define host{
+	host_name		{{ ansible_nagios_graylog_hostname | upper }}
+	alias 			{{ ansible_nagios_graylog_hostname | upper }} Graylog Server
+	{% if ansible_nagios_graylog_parents %}
+	parents			{{ ansible_nagios_graylog_parents }}
+	{% endif %}
+	address			{{ ansible_nagios_graylog_address }}
+	use			    {{ ansible_nagios_graylog_template }}
+}
+
+{% endif %}

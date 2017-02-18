@@ -1,0 +1,24 @@
+---
+# defaults file for ansible_nagios_graylog2_nsca/
+
+# nagios configuration (optional settings):
+ansible_nagios_graylog_setup_nagios_service: false
+
+# nagios configuration options:
+nagios_etc: '/usr/local/nagios/etc'
+nagios_config_cfg_dir: "{{ nagios_etc }}/conf.d"
+
+# Nagios Service for each streams to configure:
+ansible_nagios_graylog_nagios_streams: []
+# - name: "Graylog2-STREAM_NAME"
+#   contact_group: "Graylog2-STREAM_NAME"
+#   members: "admins"
+
+# Nagios Option to add graylog host
+ansible_nagios_graylog_setup_nagios_host: false
+ansible_nagios_graylog_hostname: ''
+ansible_nagios_graylog_parents: ''
+ansible_nagios_graylog_address: ''
+ansible_nagios_graylog_template: ''
+
+nagios_service: 'nagios'
