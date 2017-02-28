@@ -1,4 +1,5 @@
 
+
 Role Name
 =========
 
@@ -57,6 +58,11 @@ Including an example of how to use your role (for instance, with variables passe
         - role::ansible_nagios_graylog2_nsca
         - role::ansible_nagios_graylog2_nsca_config_nagios
 ```
+
+Example run
+-----------
+
+    ansible-playbook -i inventory roles.graylog2.yml -K -k -v --tags role::ansible_nagios_graylog2_nsca 
 
 License
 -------

@@ -2,3 +2,9 @@
 # tasks file for ansible_nagios_graylog2_nsca/
 
 - include: nagios_config.yml
+
+- name: Ensure nsca is started and enabled
+  service:
+    name: "{{ nsca_service }}"
+    state: started
+    enabled: yes

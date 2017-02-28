@@ -22,3 +22,4 @@ ansible_nagios_graylog_address: ''
 ansible_nagios_graylog_template: ''
 
 nagios_service: 'nagios'
+nsca_service: nsca
