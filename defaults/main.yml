@@ -12,7 +12,13 @@ nagios_config_cfg_dir: "{{ nagios_etc }}/conf.d"
 ansible_nagios_graylog_nagios_streams: []
 # - name: "Graylog2-STREAM_NAME"
 #   contact_group: "Graylog2-STREAM_NAME"
-#   members: "admins"
+
+# Nagios Service for each contactgroup to configure:
+ansible_nagios_graylog_nagios_streams_contactgroups: []
+
+  #- contact_group: "Graylog2-Azure_streams"
+  #  members: "nagiosadmin"
+
 
 # Nagios Option to add graylog host
 ansible_nagios_graylog_setup_nagios_host: false

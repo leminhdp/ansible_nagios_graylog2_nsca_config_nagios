@@ -15,10 +15,12 @@ define service {
         contact_groups                 {{ stream.contact_group }}
         flap_detection_enabled         0
 }
+{% endfor %}
 
+{% for stream in ansible_nagios_graylog_nagios_streams_contactgroups %}
 define contactgroup{
-        contactgroup_name       {{ stream.contact_group | default(stream.name) }}
-        alias                   {{ stream.contact_group | default(stream.name) }}
+        contactgroup_name       {{ stream.contact_group }}
+        alias                   {{ stream.contact_group }}
         members                 {{ stream.members | default('nagiosadmin') }}
 }
 {% endfor %}

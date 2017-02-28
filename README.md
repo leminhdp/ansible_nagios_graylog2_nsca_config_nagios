@@ -3,8 +3,8 @@
 Role Name
 =========
 
-**ansible_nagios_graylog2_nsca**  
-Graylog2 script and nagios automatic configuration to have nsca scripts for your streams. (Send notifications to nagio
+**ansible_nagios_graylog2_nsca_config_nagios**  
+Configure nagios to receive Graylog2 script nsca for your streams. (Send notifications to nagios)
 
 Starting this work based on: 
 https://bashinglinux.wordpress.com/2013/05/26/graylog2-and-nagios-integration-2/
