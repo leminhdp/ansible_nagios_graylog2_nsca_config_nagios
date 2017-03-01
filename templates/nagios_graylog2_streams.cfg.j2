@@ -9,7 +9,7 @@ define service {
         # enable active checks only to reset the alarm
         active_checks_enabled          1
         check_command                  check_tcp!22
-        normal_check_interval          10
+        normal_check_interval          60
         notification_interval          10
         # set the contact group
         contact_groups                 {{ stream.contact_group }}
