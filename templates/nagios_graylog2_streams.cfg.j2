@@ -10,7 +10,7 @@ define service {
         active_checks_enabled          1
         check_command                  check_tcp!22
         normal_check_interval          60
-        notification_interval          10
+        notification_interval          60
         # set the contact group
         contact_groups                 {{ stream.contact_group }}
         flap_detection_enabled         0

@@ -1,18 +1,16 @@
 
-
 Role Name
 =========
 
-**ansible_nagios_graylog2_nsca_config_nagios**  
-Configure nagios to receive Graylog2 script nsca for your streams. (Send notifications to nagios)
+**ansible_nagios_graylog2_nsca_config_nagios**
+Configure nagios to receive Graylog2 script nsca for your streams. (receive notification service)
 
-Starting this work based on: 
+Starting this work based on:
 https://bashinglinux.wordpress.com/2013/05/26/graylog2-and-nagios-integration-2/
 
 I have seen this also: 
 https://github.com/frederikhappel/graylog2-plugin-alarmcallback-nsca
-But as this 4y old and I don't support java I will not use it. 
-
+But as this 4y old and I don't support java I will not use it.
 
 Requirements
 ------------
@@ -23,7 +21,6 @@ Role Variables
 --------------
 
 Check [defaults/main.yml](defaults/main.yml) file for details
-
 
 Configure graylog for exec
 --------------------------
