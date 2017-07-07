@@ -25,7 +25,7 @@ ansible_nagios_graylog_setup_nagios_host: false
 ansible_nagios_graylog_hostname: ''
 ansible_nagios_graylog_parents: ''
 ansible_nagios_graylog_address: ''
-ansible_nagios_graylog_template: ''
+ansible_nagios_graylog_template: 'generic-service'  # The nagios service template to use, should already exist
 
 nagios_service: 'nagios'
 nsca_service: nsca
